@@ -40,6 +40,7 @@ while val != n:
         val -= 1
     elif visit[val] == 3:
         val //= 2
+
 while st:
     path.append(st.pop())
 print(' '.join(map(str, path)))
