@@ -10,28 +10,28 @@ for _ in range(n-1):
     adj[a].append(b)
     adj[b].append(a)
 
-tmp_ans = list(map(int, input().split()))
-
-level = [0] * (n+1)
+b = list(map(int, input().split()))
+pri = [0]*(n+1)
+for i in range(1,n+1):
+    pri[b[i-1]] = i
+for ele in adj:
+    ele.sort(key = lambda x: pri[x])
 visit = [False]*(n+1)
-ans = []
 q = deque()
-visit[1] = True
 q.append(1)
-
+visit[1] = True
+ret = []
 while q:
-    now = q.popleft()
-    ans.append(now)
-
-    for ele in adj[now]:
+    x = q.popleft()
+    ret.append(x)
+    for ele in adj[x]:
         if not visit[ele]:
             visit[ele] = True
-            level[ele] = level[now] + 1
             q.append(ele)
 
-ret = 1
-for i, j in zip(ans, tmp_ans):
-    if level[i] != level[j]:
-        ret = 0
+ans = 1
+for i,j in zip(b,ret):
+    if i!=j:
+        ans = 0
         break
-print(ret)
+print(ans)
