@@ -30,3 +30,4 @@ for _ in range(tc):
         print("EMPTY")
     else:
         print(M, m)
+    
