@@ -44,7 +44,7 @@ def simulation(board, visit, candi, ret, n, l, r):
 def solve():
     n, l, r = map(int, input().split())
     board = [list(map(int, input().split())) for _ in range(n)]
-    visit = [[-1]*n for _ in range(n)]
+    visit = [[-1] * n for _ in range(n)]
     ret = 0
     candi = [(x, y) for x in range(n) for y in range(n)]
     while simulation(board, visit, candi, ret, n, l, r):
