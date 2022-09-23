@@ -34,4 +34,24 @@ def solution(id_list, report, k):
         answer.append(cnt)
     return answer
 
+
+
 print(solution(["muzi", "frodo", "apeach", "neo"], ["muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi"], 2))
+#
+# from collections import defaultdict
+#
+#
+# def solution(id_list, report, k):
+#     dt = defaultdict(int)
+#     reported = defaultdict(set)
+#
+#     for ele in report:
+#         a, b = ele.split()
+#         reported[b].add(a)
+#
+#     for key in reported:
+#         if len(reported[key]) >= k:
+#             for ele in reported[key]:
+#                 dt[ele] += 1
+#
+#     return [dt[x] for x in id_list]
