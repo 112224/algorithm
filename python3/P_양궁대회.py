@@ -38,3 +38,34 @@ def solution(n, info):
     return answer if answer else -1
 
 print(solution(5, [2, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0]))
+
+
+# from itertools import combinations_with_replacement
+#
+# def calculator(a1, a_idx):
+#     ret = 0
+#     a2 = [0]*11
+#     for val in a_idx:
+#         a2[10 - val] += 1
+#     for i in range(11):
+#         if a1[i] == 0 and a2[i] == 0:continue
+#         if a1[i] < a2[i]:
+#             ret += 10 - i
+#         else:
+#             ret -= 10 - i
+#     return ret
+#
+# def solution(n, info):
+#     answer = -1
+#     ret = []
+#     for ary in combinations_with_replacement(range(11), n):
+#         diff = calculator(info, ary)
+#         if diff > answer:
+#             answer = diff
+#             ret = ary
+#     if answer > 0:
+#         info2 = [0] * 11
+#         for ele in ret:
+#             info2[10 - ele] += 1
+#         return info2
+#     return [-1]
